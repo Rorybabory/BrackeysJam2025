@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2cqljgre2d3s"]
+
+[ext_resource type="Script" uid="uid://pced6166lu41" path="res://Player.gd" id="1_1j2nc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_65fle"]
+height = 1.9
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+wall_min_slide_angle = 0.647517
+script = ExtResource("1_1j2nc")
+speed = 4.0
+jumpVelocity = 6.0
+gravityMultiplier = 1.75
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.948463, 0)
+shape = SubResource("CapsuleShape3D_65fle")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+cull_mask = 1048573
+current = true
+fov = 90.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 632.0
+offset_top = 352.0
+offset_right = 648.0
+offset_bottom = 368.0

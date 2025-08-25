@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://db7oogg0lp1sw"]
+
+[ext_resource type="Script" uid="uid://crr30dcar5xlv" path="res://scripts/door.gd" id="1_hpvv5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5f452"]
+size = Vector3(1.5, 2.5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvdjg"]
+size = Vector3(1.5, 2.5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83dcw"]
+size = Vector3(2.26965, 3.00977, 1.1967)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_hpvv5")
+
+[node name="hinge" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.722743, 0, 0)
+
+[node name="MeshInstance3D2" type="StaticBody3D" parent="hinge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.722743, 1.26266, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hinge/MeshInstance3D2"]
+mesh = SubResource("BoxMesh_5f452")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/MeshInstance3D2"]
+shape = SubResource("BoxShape3D_uvdjg")
+
+[node name="Trigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.68204)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00177002, 1.00488, -0.0482712)
+shape = SubResource("BoxShape3D_83dcw")
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]

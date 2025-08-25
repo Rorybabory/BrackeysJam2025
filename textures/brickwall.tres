@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d2bgs56aoqtvb"]
+
+[ext_resource type="Texture2D" uid="uid://clk5lh78l4l6d" path="res://textures/brickwall.png" id="1_3ea5y"]
+
+[resource]
+albedo_texture = ExtResource("1_3ea5y")
+metallic_specular = 0.0
+texture_filter = 2
