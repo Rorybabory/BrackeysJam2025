@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cppe150essq46"]
+
+[ext_resource type="ArrayMesh" uid="uid://cbkldxt36ria8" path="res://models/shoppingcart.obj" id="1_h2bo6"]
+
+[node name="Shoppingcart" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.73196e-08, 0, -0.625, 0, 0.625, 0, 0.625, 0, -2.73196e-08, 0, 0, 0)
+mesh = ExtResource("1_h2bo6")

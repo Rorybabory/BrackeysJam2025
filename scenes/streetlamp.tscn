@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0xy0wv1gubbm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3lkl6"]
+size = Vector3(0.2, 7, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhixf"]
+albedo_color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dhixf"]
+size = Vector3(1.9, 0.205, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ku0tr"]
+size = Vector3(1.204, 0.205, 0.695)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr115"]
+emission_enabled = true
+emission = Color(0.909954, 0.954159, 0.851859, 1)
+emission_energy_multiplier = 7.95
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3lkl6"]
+points = PackedVector3Array(0.136196, 3.52147, 0.136196, -0.121472, -3.52147, -0.121472, -0.121472, -3.52147, 0.136196, -0.121472, 3.52147, -0.121472, 0.136196, -3.52147, -0.121472, 0.136196, -3.52147, 0.136196, -0.121472, 3.52147, 0.136196, 0.136196, 3.52147, -0.121472)
+
+[node name="Streetlamp" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.33137, 0)
+mesh = SubResource("BoxMesh_3lkl6")
+surface_material_override/0 = SubResource("StandardMaterial3D_dhixf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812338, 6.94446, 0)
+mesh = SubResource("BoxMesh_dhixf")
+surface_material_override/0 = SubResource("StandardMaterial3D_dhixf")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.945231, 6.92841, 0)
+mesh = SubResource("BoxMesh_ku0tr")
+surface_material_override/0 = SubResource("StandardMaterial3D_wr115")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.33137, 0)
+shape = SubResource("ConvexPolygonShape3D_3lkl6")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.879566, 2.07969e-08, -0.475778, 0.475778, -3.8447e-08, 0.879566, 0, -1, -4.37114e-08, 0.880627, 6.39695, 0)
+light_energy = 11.611
+shadow_enabled = true
+spot_range = 18.0198
+spot_angle = 42.16
+spot_angle_attenuation = 2.63902

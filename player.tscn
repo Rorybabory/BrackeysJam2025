@@ -29,3 +29,6 @@ offset_left = 632.0
 offset_top = 352.0
 offset_right = 648.0
 offset_bottom = 368.0
+
+[node name="CartAttach" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.53531)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpa33jonmjw8"]
+
+[ext_resource type="Script" uid="uid://pn8qhn7cvmkw" path="res://scripts/conveyor.gd" id="1_kqxj7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rj58c"]
+size = Vector3(1, 1, 3.15186)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rj58c"]
+size = Vector3(1, 0.03, 0.045)
+
+[node name="Conveyor" type="StaticBody3D" groups=["Interactable"]]
+collision_layer = 3
+script = ExtResource("1_kqxj7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56519)
+shape = SubResource("BoxShape3D_rj58c")
+
+[node name="Bar" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.486, 2.54823)
+mesh = SubResource("BoxMesh_rj58c")

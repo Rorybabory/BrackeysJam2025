@@ -22,6 +22,8 @@ var healthbar
 
 var alive = true
 
+var push_force = 1.0;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -67,6 +69,11 @@ func _physics_process(delta):
 	if (Input.is_action_just_pressed("move_jump") and is_on_floor()):
 		velocity.y = jumpVelocity
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is RigidBody3D:
+			collision.get_collider().apply_central_impulse(-collision.get_normal() * push_force)
 func _input(event):
 	if event is InputEventMouseMotion:
 		if (alive == false):
@@ -78,6 +85,21 @@ func _input(event):
 			head.rotation.x = range
 		if (head.rotation.x < -range):
 			head.rotation.x = -range
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
+		var camera3d = camera
+		var from = camera3d.project_ray_origin(event.position)
+		var to = from + camera3d.project_ray_normal(event.position) * 20
+		var space_state = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.create(from, to)
+		query.collision_mask = 2
+		var result = space_state.intersect_ray(query)
+		if (not result):
+			return
+		if (not result.collider):
+			return
+		if (result.collider.is_in_group("Interactable")):
+			result.collider._on_use(self)
+
 func _process(delta):
 	if (alive == false):
 		rotation.z = lerp(rotation.z, -PI*0.5, delta*5)
@@ -88,5 +110,6 @@ func _process(delta):
 	head.position.z = 0
 	head.position += screenshake * shake_value
 	shake_value = lerpf(shake_value, 0.0, delta*4.5)
+
 	if (health <= 0):
 		alive = false
