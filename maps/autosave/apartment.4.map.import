@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://km2g05hduavb"
+path="res://.godot/imported/apartment.4.map-e85590587bc78c1b858b78ec62be55f3.tres"
+
+[deps]
+
+source_file="res://maps/autosave/apartment.4.map"
+dest_files=["res://.godot/imported/apartment.4.map-e85590587bc78c1b858b78ec62be55f3.tres"]
+
+[params]
+

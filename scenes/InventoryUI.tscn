@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2fo71hehxxvg"]
+[gd_scene load_steps=3 format=3 uid="uid://cgl3errny1uhd"]
 
-[ext_resource type="Script" uid="uid://qx5suwms2dlm" path="res://scripts/inventory_ui.gd" id="1_ju2k0"]
+[ext_resource type="Script" path="res://scripts/inventory_ui.gd" id="1_ju2k0"]
 [ext_resource type="Texture2D" uid="uid://bwdst1fg7rmda" path="res://sprites/biscuit.png" id="2_l5txx"]
 
 [node name="InventoryUi" type="Control"]
@@ -15,47 +15,55 @@ script = ExtResource("1_ju2k0")
 [node name="slots" type="Node2D" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="slots"]
+texture_filter = 1
 offset_right = 64.0
 offset_bottom = 64.0
 texture = ExtResource("2_l5txx")
 
 [node name="TextureRect2" type="TextureRect" parent="slots"]
+texture_filter = 1
 offset_top = 64.0
 offset_right = 64.0
 offset_bottom = 128.0
 texture = ExtResource("2_l5txx")
 
 [node name="TextureRect3" type="TextureRect" parent="slots"]
+texture_filter = 1
 offset_top = 128.0
 offset_right = 64.0
 offset_bottom = 192.0
 texture = ExtResource("2_l5txx")
 
 [node name="TextureRect4" type="TextureRect" parent="slots"]
+texture_filter = 1
 offset_top = 196.0
 offset_right = 64.0
 offset_bottom = 260.0
 texture = ExtResource("2_l5txx")
 
 [node name="TextureRect5" type="TextureRect" parent="slots"]
+texture_filter = 1
 offset_top = 256.0
 offset_right = 64.0
 offset_bottom = 320.0
 texture = ExtResource("2_l5txx")
 
 [node name="TextureRect6" type="TextureRect" parent="slots"]
+texture_filter = 1
 offset_top = 320.0
 offset_right = 64.0
 offset_bottom = 384.0
 texture = ExtResource("2_l5txx")
 
 [node name="TextureRect7" type="TextureRect" parent="slots"]
+texture_filter = 1
 offset_top = 384.0
 offset_right = 64.0
 offset_bottom = 448.0
 texture = ExtResource("2_l5txx")
 
 [node name="TextureRect8" type="TextureRect" parent="slots"]
+texture_filter = 1
 offset_top = 448.0
 offset_right = 64.0
 offset_bottom = 512.0

@@ -7,6 +7,7 @@ var mouseDelta
 @export var speed = 7.0
 @export var jumpVelocity = 3.0;
 @export var gravityMultiplier = 2.0;
+@export var canJump : bool = false
 var mouse_sens = 0.1
 @onready var head = $head
 var headbob = 0.0
@@ -66,7 +67,7 @@ func _physics_process(delta):
 			velocity.x = lerpf(velocity.x, 0, delta*2)
 			velocity.z = lerpf(velocity.z, 0, delta*2)
 		headbob = lerpf(headbob, 0, delta*15)
-	if (Input.is_action_just_pressed("move_jump") and is_on_floor()):
+	if (Input.is_action_just_pressed("move_jump") and is_on_floor() and canJump):
 		velocity.y = jumpVelocity
 	move_and_slide()
 	

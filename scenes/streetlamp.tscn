@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0xy0wv1gubbm"]
+[gd_scene load_steps=8 format=3 uid="uid://d0xy0wv1gubbm"]
+
+[ext_resource type="Texture2D" uid="uid://ppmjh7k8w25p" path="res://sprites/cone.png" id="1_dhixf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3lkl6"]
 size = Vector3(0.2, 7, 0.2)
@@ -42,9 +44,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.33137, 0)
 shape = SubResource("ConvexPolygonShape3D_3lkl6")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.879566, 2.07969e-08, -0.475778, 0.475778, -3.8447e-08, 0.879566, 0, -1, -4.37114e-08, 0.880627, 6.39695, 0)
-light_energy = 11.611
+transform = Transform3D(0.948689, 1.38221e-08, -0.316212, 0.316212, -4.14685e-08, 0.948689, 1.2788e-15, -1, -4.37114e-08, 0.880627, 6.39695, 0)
+light_color = Color(0.965983, 0.925222, 0.742852, 1)
+light_energy = 16.0
 shadow_enabled = true
-spot_range = 18.0198
-spot_angle = 42.16
+spot_range = 180.058
+spot_angle = 67.07
 spot_angle_attenuation = 2.63902
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1918, 3.30077, 0)
+modulate = Color(1, 1, 1, 0.141176)
+pixel_size = 0.14
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_dhixf")
